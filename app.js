@@ -10,9 +10,11 @@ const app = express();
   require("./helper/db");
  
 })();
-app.use(cors());
 app.use(cors({
-  origin: "*"
+  origin: "*",
+  methods: "GET,POST,PUT,DELETE,OPTIONS",
+  allowedHeaders: "Content-Type,Authorization",
+  credentials: true
 }));
 
 app.use(express.json());           
