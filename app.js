@@ -12,10 +12,7 @@ const app = express();
 })();
 app.use(
   cors({
-    origin: [
-      "http://localhost:3001","http://localhost:3000","http://dev.cashcasino.gg","http://localhost:3000/"
-      "https://dev.cashcasino.gg",  // if your production frontend exists
-    ],
+    origin: '*',
     methods: "GET,POST,PUT,DELETE,OPTIONS",
     credentials: true
   })
