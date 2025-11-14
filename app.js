@@ -10,12 +10,16 @@ const app = express();
   require("./helper/db");
  
 })();
-app.use(cors({
-  origin: "*",
-  methods: "GET,POST,PUT,DELETE,OPTIONS",
-  allowedHeaders: "Content-Type,Authorization",
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3001",
+      "https://dev.cashcasino.gg",  // if your production frontend exists
+    ],
+    methods: "GET,POST,PUT,DELETE,OPTIONS",
+    credentials: true
+  })
+);
 
 app.use(express.json());           
 app.use(express.urlencoded({ extended: true }));
