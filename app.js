@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const { initRoutes } = require("./src/router");
+const cors = require("cors");
+
 const app = express();
 
 (async () => {
@@ -8,6 +10,8 @@ const app = express();
   require("./helper/db");
  
 })();
+app.use(cors());
+
 app.use(express.json());           
 app.use(express.urlencoded({ extended: true }));
 // set ejs view engine
