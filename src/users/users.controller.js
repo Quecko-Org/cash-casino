@@ -14,13 +14,13 @@ exports.getUser = async (req, res, next) => {
 
 exports.storeUser = async (req, res, next) => {
   try {
-    const { email } = req.body;
-console.log("body",email)
-    if (!email) {
+    const { emails } = req.body;
+console.log("body",emails)
+    if (!emails) {
       return res.status(400).json({ success: false, message: 'Email is required' });
     }
 
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email:emails });
     if (existingUser) {
       return res.status(400).json({ success: false, message: 'Email already exists' });
     }
