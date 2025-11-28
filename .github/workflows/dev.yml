@@ -5,7 +5,7 @@ on:
       - dev
 jobs:
   build:
-    runs-on: [self-hosted,cash-casino-vm]
+    runs-on: [self-hosted,cash-casino-dev]
     env:
       PM2_PROCESS_NAME: Cash-Casino-Dev
       node-version: 22
